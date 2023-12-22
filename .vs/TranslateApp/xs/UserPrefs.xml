@@ -1,0 +1,33 @@
+﻿<Properties StartupConfiguration="{E914CF3E-A5AC-4813-8FAE-52EE91CE49C5}|http">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="TranslateApp/Pages/Translate.razor">
+    <Files>
+      <File FileName="TranslateApp/Properties/launchSettings.json" Line="20" Column="6" IsPinned="True" />
+      <File FileName="TranslateApp/Pages/Translate.razor" Line="56" Column="70" />
+      <File FileName="TranslateApp/Client/Translatesever.cs" Line="53" Column="53" />
+      <File FileName="TranslateApp/Pages/Index.razor" />
+      <File FileName="TranslateApp/Client/Program.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="TranslateApp" expanded="True">
+            <Node name="TranslateApp" expanded="True">
+              <Node name="Client" expanded="True" />
+              <Node name="Pages" expanded="True">
+                <Node name="Translate.razor" selected="True" />
+              </Node>
+              <Node name="Properties" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.TranslateApp PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+</Properties>
