@@ -199,13 +199,13 @@
       "mscorlib.dll": "sha256-YcsJInaT\/kw3Vrm+SESegPxvT\/Lr9RE6rE\/KnxWIIc0=",
       "netstandard.dll": "sha256-TztlSRjADgiEABbiAMdWZpHrUVd8wnRtQRAvlwmRP\/4=",
       "System.Private.CoreLib.dll": "sha256-BAhrZ8Zg3cJKQipxdzqQo+9jtPkOkRx1ou3oIhDohtk=",
-      "TranslateApp.dll": "sha256-rz03mCjqDmq83oF4qSCBGDCmnIo+lUi+AhSE2h0zS2g="
+      "TranslateApp.dll": "sha256-UPvbBvyu6ADF7JYc8mLfvl2a3ZNnEzcPkgOGQUldhIE="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
-      "TranslateApp.pdb": "sha256-22wgW6IANUYeLiVZJv4YVV7WyU5ttgepMzcqYPedUz0="
+      "TranslateApp.pdb": "sha256-5+vXtexHCXrleoUycNJIK5qgDp3fq8TKYeg\/Y\/kIq+w="
     },
     "runtime": {
       "dotnet.7.0.14.esd5hyslz2.js": "sha256-YWGUknGRzP\/fgO6YjvCJKPVQNZAPEd6ll+rHfQEIW+I=",

@@ -47,7 +47,7 @@
 
     private string? TranslationResult;
 
-    
+
 
     public class Language
     {
@@ -58,9 +58,15 @@
 
     private async Task HandleValidSubmit()
     {
-        TranslationResult = await TranslateService.TranslateTextAsync(TranslationInput.TextToTranslate, TranslationInput.TargetLanguage);
+
+        TranslationResult = await TranslateService.TranslateTextAsync(TranslationInput.TextToTranslate, "auto", TranslationInput.TargetLanguage);
+
+        StateHasChanged(); // Notify Blazor that the state has changed and the UI needs to be updated
     }
 
-}
+
+    }
+
+
 
 

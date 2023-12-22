@@ -19,8 +19,7 @@ namespace TranslateApp
 
     public class TranslationResult
     {
-        public Data Data { get; set; } = new Data();
-        public string TranslatedData { get; set; } = string.Empty;
+        public string? Trans { get; set; }
     }
 
     public class Data
@@ -48,7 +47,7 @@ namespace TranslateApp
     {
         private readonly HttpClient _httpClient;
         private readonly string _apiKey = "e2d746bb27mshfd7a9553bd4b209p151d10jsn9a5efdad6524"; // Replace with your actual API key
-        private readonly string _apiUrl = "https://google-translate113.p.rapidapi.com/api/v1/translator/detect-language";
+        private readonly string _apiUrl = "https://google-translate113.p.rapidapi.com/api/v1/translator/text";
 
         public TranslationService(HttpClient httpClient)
         {
@@ -57,32 +56,47 @@ namespace TranslateApp
             _httpClient.DefaultRequestHeaders.Add("x-rapidapi-host", "google-translate113.p.rapidapi.com");
         }
 
-
-        public async Task<string> TranslateTextAsync(string text, string targetLanguage)
+        public async Task<string> TranslateTextAsync(string text, string fromLanguage, string toLanguage)
         {
-            var requestBody = new Dictionary<string, string>
+            // Check if the text or the target language is null or empty
+            if (string.IsNullOrEmpty(text) || string.IsNullOrEmpty(fromLanguage) || string.IsNullOrEmpty(toLanguage))
             {
-                { "text", text },
-                { "target_lang", targetLanguage }
-            };
+                return "Text, from language or to language is null or empty";
+            }
+
+            var requestBody = new Dictionary<string, string>
+                {
+                    { "text", text },
+                    { "from", fromLanguage },
+                    { "to", toLanguage }
+                };
             var content = new FormUrlEncodedContent(requestBody);
-            
+
             var response = await _httpClient.PostAsync(_apiUrl, content);
             if (response.IsSuccessStatusCode)
             {
                 var jsonResponse = await response.Content.ReadAsStringAsync();
+                Console.WriteLine($"JSON response: {jsonResponse}");
+
                 var translationResult = JsonConvert.DeserializeObject<TranslationResult>(jsonResponse);
+                Console.WriteLine($"Deserialized translation result: {translationResult}");
                 if (translationResult != null)
                 {
-                    return translationResult.TranslatedData;
+                    //Console.WriteLine($"Deserialized translation result: {translationResult}");
+                    return translationResult.Trans;
                 }
                 else
                 {
                     return "Error in translation";
                 }
-            }
-            var responseBody = await response.Content.ReadAsStringAsync();
-            // Add this line to return a value when the status code is not successful
+                }
+                else
+                {
+                    Console.WriteLine($"Status code: {response.StatusCode}");
+                    var responseBody = await response.Content.ReadAsStringAsync();
+                    Console.WriteLine($"Response body: {responseBody}");
+                }
+
             return "Error in request";
         }
 
