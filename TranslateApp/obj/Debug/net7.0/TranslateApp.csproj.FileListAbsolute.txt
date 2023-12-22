@@ -1,3 +1,9 @@
+/Users/zoeyyang/Projects/TranslateApp/TranslateApp/obj/Debug/net7.0/TranslateApp.csproj.AssemblyReference.cache
+/Users/zoeyyang/Projects/TranslateApp/TranslateApp/obj/Debug/net7.0/TranslateApp.GeneratedMSBuildEditorConfig.editorconfig
+/Users/zoeyyang/Projects/TranslateApp/TranslateApp/obj/Debug/net7.0/TranslateApp.AssemblyInfoInputs.cache
+/Users/zoeyyang/Projects/TranslateApp/TranslateApp/obj/Debug/net7.0/TranslateApp.AssemblyInfo.cs
+/Users/zoeyyang/Projects/TranslateApp/TranslateApp/obj/Debug/net7.0/TranslateApp.csproj.CoreCompileInputs.cache
+/Users/zoeyyang/Projects/TranslateApp/TranslateApp/obj/Debug/net7.0/TranslateApp.MvcApplicationPartsAssemblyInfo.cache
 /Users/zoeyyang/Projects/TranslateApp/TranslateApp/bin/Debug/net7.0/wwwroot/_framework/blazor.boot.json
 /Users/zoeyyang/Projects/TranslateApp/TranslateApp/bin/Debug/net7.0/wwwroot/_framework/blazor.webassembly.js
 /Users/zoeyyang/Projects/TranslateApp/TranslateApp/bin/Debug/net7.0/wwwroot/_framework/dotnet.7.0.14.esd5hyslz2.js
@@ -605,12 +611,6 @@
 /Users/zoeyyang/Projects/TranslateApp/TranslateApp/bin/Debug/net7.0/icudt_CJK.dat
 /Users/zoeyyang/Projects/TranslateApp/TranslateApp/bin/Debug/net7.0/icudt_EFIGS.dat
 /Users/zoeyyang/Projects/TranslateApp/TranslateApp/bin/Debug/net7.0/icudt_no_CJK.dat
-/Users/zoeyyang/Projects/TranslateApp/TranslateApp/obj/Debug/net7.0/TranslateApp.csproj.AssemblyReference.cache
-/Users/zoeyyang/Projects/TranslateApp/TranslateApp/obj/Debug/net7.0/TranslateApp.GeneratedMSBuildEditorConfig.editorconfig
-/Users/zoeyyang/Projects/TranslateApp/TranslateApp/obj/Debug/net7.0/TranslateApp.AssemblyInfoInputs.cache
-/Users/zoeyyang/Projects/TranslateApp/TranslateApp/obj/Debug/net7.0/TranslateApp.AssemblyInfo.cs
-/Users/zoeyyang/Projects/TranslateApp/TranslateApp/obj/Debug/net7.0/TranslateApp.csproj.CoreCompileInputs.cache
-/Users/zoeyyang/Projects/TranslateApp/TranslateApp/obj/Debug/net7.0/TranslateApp.MvcApplicationPartsAssemblyInfo.cache
 /Users/zoeyyang/Projects/TranslateApp/TranslateApp/obj/Debug/net7.0/build-gz/whPl1GAX.gz
 /Users/zoeyyang/Projects/TranslateApp/TranslateApp/obj/Debug/net7.0/build-gz/m68RRorU.gz
 /Users/zoeyyang/Projects/TranslateApp/TranslateApp/obj/Debug/net7.0/build-gz/9mzTHwiz.gz

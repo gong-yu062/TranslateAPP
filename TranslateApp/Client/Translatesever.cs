@@ -46,7 +46,7 @@ namespace TranslateApp
     public class TranslationService
     {
         private readonly HttpClient _httpClient;
-        private readonly string _apiKey = "e2d746bb27mshfd7a9553bd4b209p151d10jsn9a5efdad6524"; // Replace with your actual API key
+        private readonly string _apiKey = "e2d746bb27mshfd7a9553bd4b209p151d10jsn9a5efdad6524"; 
         private readonly string _apiUrl = "https://google-translate113.p.rapidapi.com/api/v1/translator/text";
 
         public TranslationService(HttpClient httpClient)
@@ -82,7 +82,7 @@ namespace TranslateApp
                 Console.WriteLine($"Deserialized translation result: {translationResult}");
                 if (translationResult != null)
                 {
-                    //Console.WriteLine($"Deserialized translation result: {translationResult}");
+                    
                     return translationResult.Trans;
                 }
                 else

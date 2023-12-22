@@ -6,33 +6,52 @@
 @inject HttpClient Http
 ...
 
-<h1>Translate Language</h1>
+<h1 class="
+    ">Translate your Language</h1>
 
 <EditForm Model="TranslationInput" OnValidSubmit="HandleValidSubmit">
     <DataAnnotationsValidator />
     <ValidationSummary />
 
     <div class="form-group">
+        <img src="image/la.jpeg" />
+        <br /><br />
         <label for="textToTranslate">Text to Translate:</label>
         <InputTextArea id="textToTranslate" @bind-Value="TranslationInput.TextToTranslate" class="form-control" />
     </div>
-
+    <br />
     <div class="form-group">
         <label for="targetLanguage">Target Language:</label>
+        <br>
         <InputSelect id="targetLanguage" @bind-Value="TranslationInput.TargetLanguage" class="form-control">
-           
-                <option value="en">English</option>
-                <option value="es">Spanish</option>
-                <option value="fr">French</option>
-                <option value="de">German</option>
-                <option value="it">Italian</option>
-                <option value="pt">Portuguese</option>
-            
+
+            <option value="en">English</option>
+            <option value="es">Spanish</option>
+            <option value="fr">French</option>
+            <option value="de">German</option>
+            <option value="it">Italian</option>
+            <option value="pt">Portuguese</option>
+            <option value="pt">Portuguese</option>
+            <option value="ru">Russian</option>
+            <option value="zh">Chinese</option>
+            <option value="ja">Japanese</option>
+            <option value="ko">Korean</option>
+            <option value="ar">Arabic</option>
+            <option value="hi">Hindi</option>
+            <option value="ms">Malay</option>
+            <option value="fa">Persian</option>
+            <option value="sw">Swahili</option>
+            <option value="tr">Turkish</option>
+            <option value="vi">Vietnamese</option>
+            <option value="el">Greek</option>
+
+
         </InputSelect>
     </div>
-
-    <button type="submit" class="btn btn-primary">Translate</button>
-
+    <br/>
+    <button type="submit" class="btn btn-warning text-white">Translate</button>
+     <br />
+    <NavLink class="btn btn-warning mt-3 text-white" href="/">Go Back</NavLink>
 </EditForm>
 
 @if (!string.IsNullOrEmpty(TranslationResult))

@@ -16,9 +16,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="img\" />
+    <Folder Include="wwwroot\image\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="img\" />
+    <Content Remove="wwwroot\image\" />
+    <Content Remove="wwwroot\image\language.webp" />
+    <Content Remove="wwwroot\image\La.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\image\language.webp" />
+    <None Include="wwwroot\image\La.jpeg" />
   </ItemGroup>
 </Project>

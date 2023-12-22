@@ -25,6 +25,12 @@ namespace SeleniumTest
         [TestMethod]
         public void TestTranslationFeature()
         {
+            if (driver == null)
+            {
+                Assert.Fail("WebDriver is not initialized.");
+                return; // Exit the method if driver is null
+            }
+
             // Navigate to the Translate page
             driver.Navigate().GoToUrl("http://localhost:5026/translate"); // Update with your app's URL
 
@@ -39,7 +45,7 @@ namespace SeleniumTest
             submitButton.Click();
 
             // Wait and assert for the translation result
-            var wait = new OpenQA.Selenium.Support.UI.WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
             var resultElement = wait.Until(drv => drv.FindElement(By.ClassName("alert")));
 
             // Assertions
@@ -49,11 +55,12 @@ namespace SeleniumTest
             // Additional assertions and interactions can be added here
         }
 
+
         [TestCleanup]
         public void Cleanup()
         {
             // Teardown - Close the WebDriver
-            driver.Quit();
+             driver.Quit();
         }
 
 
