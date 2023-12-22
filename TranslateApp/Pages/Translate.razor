@@ -1,10 +1,10 @@
-﻿@page "/translate"
+﻿@page "/"
 @using System.ComponentModel.DataAnnotations
 @inject TranslateApp.TranslationService TranslateService
 @using TranslateApp
 @using System.Text.Json
 @inject HttpClient Http
-...
+
 
 <h1 class="
     ">
@@ -19,45 +19,30 @@
         <img src="image/la.jpeg" />
         <br /><br />
         <label for="textToTranslate">Text to Translate:</label>
-        <InputTextArea id="textToTranslate" @bind-Value="TranslationInput.TextToTranslate" class="form-control" />
+        <InputTextArea id="textToTranslate" @bind-Value="TranslationInput.TextToTranslate" @oninput="HandleValidSubmit" class="form-control" />
+
     </div>
     <br />
     <div class="form-group">
         <label for="targetLanguage">Target Language:</label>
         <br>
         <InputSelect id="targetLanguage" @bind-Value="TranslationInput.TargetLanguage" class="form-control">
-
-            <option value="en">English</option>
-            <option value="es">Spanish</option>
-            <option value="fr">French</option>
-            <option value="de">German</option>
-            <option value="it">Italian</option>
-            <option value="pt">Portuguese</option>
-            <option value="pt">Portuguese</option>
-            <option value="ru">Russian</option>
-            <option value="zh">Chinese</option>
-            <option value="ja">Japanese</option>
-            <option value="ko">Korean</option>
-            <option value="ar">Arabic</option>
-            <option value="hi">Hindi</option>
-            <option value="ms">Malay</option>
-            <option value="fa">Persian</option>
-            <option value="sw">Swahili</option>
-            <option value="tr">Turkish</option>
-            <option value="vi">Vietnamese</option>
-            <option value="el">Greek</option>
+            @foreach (var language in filteredLanguages.OrderBy(l => l.Name))
+                {
+                <option value="@language.Code">@language.Name</option>
+                }
 
 
         </InputSelect>
     </div>
     <br />
     <button type="submit" class="btn btn-warning text-white">Translate</button>
-    <br />
-    <NavLink class="btn btn-warning mt-3 text-white" href="/">Go Back</NavLink>
+    <br><br>
+    <button type="button" class="btn btn-warning text-white"  @onclick="ClearResultsAsync">Clear Results</button>
 </EditForm>
 
-// If the TranslationResult is not null or empty, display it in a div
-@if (!string.IsNullOrEmpty(TranslationResult))
+
+@if (!string.IsNullOrEmpty(TranslationResult)) // If the TranslationResult is not null or empty, display it in a div
 {
     <div class="alert alert-success mt-3">
         <strong>Translation Result:</strong> @TranslationResult
@@ -65,17 +50,64 @@
 }
 
 @code {
-    // Initialize a new TranslationInputModel
     private TranslationInputModel TranslationInput = new TranslationInputModel();
-
-    // The result of the translation
     private string? TranslationResult;
+    private string searchTerm = string.Empty;
 
-    // This class represents a language with a code and a name
     public class Language
     {
         public string? Code { get; set; }
         public string? Name { get; set; }
+    }
+
+    private List<Language> allLanguages = new List<Language>
+{
+        new Language { Code = "en", Name = "English" },
+        new Language { Code = "fr", Name = "French" },
+        new Language { Code = "es", Name = "Spanish" },
+        new Language { Code = "de", Name = "German" },
+        new Language { Code = "ir", Name = "Irish" },
+        new Language { Code = "it", Name = "Italian" },
+        new Language { Code = "pt", Name = "Portuguese" },
+        new Language { Code = "ru", Name = "Russian" },
+        new Language { Code = "ja", Name = "Japanese" },
+        new Language { Code = "ko", Name = "Korean" },
+        new Language { Code = "zh", Name = "Chinese" },
+        new Language { Code = "ar", Name = "Arabic" },
+        new Language { Code = "hi", Name = "Hindi" },
+        new Language { Code = "bn", Name = "Bengali" },
+        new Language { Code = "pa", Name = "Punjabi" },
+        new Language { Code = "jv", Name = "Javanese" },
+        new Language { Code = "mr", Name = "Marathi" },
+        new Language { Code = "ta", Name = "Tamil" },
+        new Language { Code = "tr", Name = "Turkish" },
+        new Language { Code = "te", Name = "Telugu" },
+        new Language { Code = "vi", Name = "Vietnamese" },
+        new Language { Code = "fa", Name = "Persian" },
+        new Language { Code = "pl", Name = "Polish" },
+        new Language { Code = "uk", Name = "Ukrainian" },
+        new Language { Code = "ro", Name = "Romanian" },
+        new Language { Code = "el", Name = "Greek" },
+        new Language { Code = "hu", Name = "Hungarian" },
+        new Language { Code = "cs", Name = "Czech" },
+        new Language { Code = "sv", Name = "Swedish" },
+        new Language { Code = "fi", Name = "Finnish" },
+        new Language { Code = "no", Name = "Norwegian" },
+
+    }.OrderBy(language => language.Name).ToList(); // Sort the languages by their names
+
+    private List<Language> filteredLanguages;
+
+    protected override void OnInitialized()
+    {
+        filteredLanguages = allLanguages;
+    }
+
+    private void FilterLanguages()
+    {
+        filteredLanguages = allLanguages
+            .Where(l => l.Name.Contains(searchTerm, StringComparison.OrdinalIgnoreCase))
+            .ToList();
     }
 
     // This method is called when the form is submitted and the input is valid
@@ -88,6 +120,38 @@
         // Notify Blazor that the state has changed and the UI needs to be updated
         StateHasChanged();
     }
+
+    
 }
 
+@if (!string.IsNullOrEmpty(ClearMessage))
+{
+    <div class="alert alert-info mt-3">
+        @ClearMessage
+    </div>
+}
 
+@code {
+
+    private string ClearMessage { get; set; } = string.Empty;
+
+    private async Task ClearResultsAsync()
+    {
+        TranslationInput.TextToTranslate = string.Empty;
+        TranslationResult = string.Empty;
+
+        if (string.IsNullOrEmpty(TranslationInput.TextToTranslate))
+        {
+            ClearMessage = "Result is already cleared";
+            await Task.Delay(3000);
+            ClearMessage = string.Empty;
+            StateHasChanged();
+
+        }
+
+        TranslationResult = null;
+        TranslationInput.TextToTranslate = null;
+        StateHasChanged();
+    }
+
+  }

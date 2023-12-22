@@ -79,6 +79,7 @@ namespace TranslateApp
             if (string.IsNullOrEmpty(text) || string.IsNullOrEmpty(fromLanguage) || string.IsNullOrEmpty(toLanguage))
             {
                 return "Text, from language or to language is null or empty";
+               
             }
             // Prepare the request body
             var requestBody = new Dictionary<string, string>
