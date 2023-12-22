@@ -32,7 +32,7 @@ namespace SeleniumTest
             }
 
             // Navigate to the Translate page
-            driver.Navigate().GoToUrl("http://localhost:5026/translate"); // Update with your app's URL
+            driver.Navigate().GoToUrl("http://localhost:5026/translate"); 
 
             // Find elements
             var textArea = driver.FindElement(By.Id("textToTranslate"));
@@ -41,7 +41,7 @@ namespace SeleniumTest
 
             // Perform actions
             textArea.SendKeys("Hello");
-            targetLanguageSelect.SendKeys("Spanish"); // Adjust as needed
+            targetLanguageSelect.SendKeys("Spanish"); 
             submitButton.Click();
 
             // Wait and assert for the translation result
@@ -59,7 +59,7 @@ namespace SeleniumTest
         [TestCleanup]
         public void Cleanup()
         {
-            // Teardown - Close the WebDriver
+            // Close the WebDriver
              driver.Quit();
         }
 

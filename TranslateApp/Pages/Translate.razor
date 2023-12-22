@@ -7,7 +7,9 @@
 ...
 
 <h1 class="
-    ">Translate your Language</h1>
+    ">
+    Translate your Language
+</h1>
 
 <EditForm Model="TranslationInput" OnValidSubmit="HandleValidSubmit">
     <DataAnnotationsValidator />
@@ -48,12 +50,13 @@
 
         </InputSelect>
     </div>
-    <br/>
+    <br />
     <button type="submit" class="btn btn-warning text-white">Translate</button>
-     <br />
+    <br />
     <NavLink class="btn btn-warning mt-3 text-white" href="/">Go Back</NavLink>
 </EditForm>
 
+// If the TranslationResult is not null or empty, display it in a div
 @if (!string.IsNullOrEmpty(TranslationResult))
 {
     <div class="alert alert-success mt-3">
@@ -62,30 +65,29 @@
 }
 
 @code {
+    // Initialize a new TranslationInputModel
     private TranslationInputModel TranslationInput = new TranslationInputModel();
 
+    // The result of the translation
     private string? TranslationResult;
 
-
-
+    // This class represents a language with a code and a name
     public class Language
     {
         public string? Code { get; set; }
         public string? Name { get; set; }
     }
 
-
+    // This method is called when the form is submitted and the input is valid
     private async Task HandleValidSubmit()
     {
-
+        // Call the TranslateTextAsync method of the TranslateService
+        // Pass the text to translate, "auto" for the source language, and the target language
         TranslationResult = await TranslateService.TranslateTextAsync(TranslationInput.TextToTranslate, "auto", TranslationInput.TargetLanguage);
 
-        StateHasChanged(); // Notify Blazor that the state has changed and the UI needs to be updated
+        // Notify Blazor that the state has changed and the UI needs to be updated
+        StateHasChanged();
     }
-
-
-    }
-
-
+}
 
 
