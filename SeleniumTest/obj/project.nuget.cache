@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "/+pBsHLMw50o1JHQv+LL26UDvBnO0pjNrjLgsKOcn5xcncA/sNMPcVs7of5gJPJSQdELkTZk7rCbXq9j0D4TjA==",
+  "dgSpecHash": "g2PQjUCzX6YJHv0UWartIlcNpOMQtWYptKmQX37deD1sK/oZSDvPi5UUUgMGob47zTYdGoh/ZygFoWl6n8I8Lg==",
   "success": true,
   "projectFilePath": "/Users/zoeyyang/Projects/TranslateApp/SeleniumTest/SeleniumTest.csproj",
   "expectedPackageFiles": [
@@ -44,6 +44,7 @@
     "/Users/zoeyyang/.nuget/packages/selenium.support/4.16.2/selenium.support.4.16.2.nupkg.sha512",
     "/Users/zoeyyang/.nuget/packages/selenium.webdriver/4.16.2/selenium.webdriver.4.16.2.nupkg.sha512",
     "/Users/zoeyyang/.nuget/packages/sharpziplib/1.4.2/sharpziplib.1.4.2.nupkg.sha512",
+    "/Users/zoeyyang/.nuget/packages/stylecop.analyzers/1.1.118/stylecop.analyzers.1.1.118.nupkg.sha512",
     "/Users/zoeyyang/.nuget/packages/system.collections/4.3.0/system.collections.4.3.0.nupkg.sha512",
     "/Users/zoeyyang/.nuget/packages/system.diagnostics.debug/4.3.0/system.diagnostics.debug.4.3.0.nupkg.sha512",
     "/Users/zoeyyang/.nuget/packages/system.diagnostics.textwritertracelistener/4.3.0/system.diagnostics.textwritertracelistener.4.3.0.nupkg.sha512",

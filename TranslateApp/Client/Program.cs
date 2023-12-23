@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
-using TranslateApp;
 
 namespace TranslateApp;
 
@@ -22,4 +21,3 @@ public class Program
         await builder.Build().RunAsync();
     }
 }
-

@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /Users/zoeyyang/Projects/TranslateApp/TranslateApp
 build_property._RazorSourceGeneratorDebug = 
 
+[/Users/zoeyyang/Projects/TranslateApp/TranslateApp/stylecop.json]
+build_metadata.AdditionalFiles.TargetPath = 
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/zoeyyang/Projects/TranslateApp/TranslateApp/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 

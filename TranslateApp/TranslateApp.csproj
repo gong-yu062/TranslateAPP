@@ -13,6 +13,10 @@
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.14" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.14" PrivateAssets="all" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
   </ItemGroup>
 
   <ItemGroup>
@@ -22,9 +26,14 @@
     <Content Remove="wwwroot\image\" />
     <Content Remove="wwwroot\image\language.webp" />
     <Content Remove="wwwroot\image\La.jpeg" />
+    <Content Remove="stylecop.json" />
   </ItemGroup>
   <ItemGroup>
     <None Include="wwwroot\image\language.webp" />
     <None Include="wwwroot\image\La.jpeg" />
+    <None Include="translate.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="stylecop.json" />
   </ItemGroup>
 </Project>
