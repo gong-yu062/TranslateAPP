@@ -5,7 +5,7 @@
     using OpenQA.Selenium.Support.UI;
 
     [TestClass]
-    public class SeleniumTest1
+    public class SeleniumTest1 
     {
         private IWebDriver? driver;
 

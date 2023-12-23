@@ -26,4 +26,10 @@
   <ItemGroup>
     <ProjectReference Include="..\TranslateApp\TranslateApp.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="stylecop.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="stylecop.json" />
+  </ItemGroup>
 </Project>
