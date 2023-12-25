@@ -47,7 +47,7 @@
             Assert.IsTrue(resultElement.Displayed, "Translation result is not displayed.");
             Assert.IsTrue(resultElement.Text.Contains("Translation Result:"), "The translation result text is incorrect.");
 
-            // Additional assertions and interactions can be added here
+           
         }
 
         [TestCleanup]
