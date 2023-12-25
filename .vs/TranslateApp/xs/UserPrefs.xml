@@ -1,27 +1,22 @@
 ﻿<Properties StartupConfiguration="{E914CF3E-A5AC-4813-8FAE-52EE91CE49C5}|http">
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="SeleniumTest/UnitTest1.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="TranslateApp/Pages/Translate.razor">
     <Files>
-      <File FileName="TranslateApp/Properties/launchSettings.json" Line="20" Column="6" IsPinned="True" />
-      <File FileName="TranslateApp/Pages/Translate.razor" Line="1" Column="1" />
-      <File FileName="TranslateApp/Client/Translatesever.cs" Line="1" Column="1" />
-      <File FileName="TranslateApp/Client/Program.cs" Line="1" Column="1" />
-      <File FileName="SeleniumTest/UnitTest1.cs" Line="24" Column="10" />
-      <File FileName="TranslateApp/Pages/Index.razor" Line="18" Column="7" />
-      <File FileName="TranslateApp/Shared/MainLayout.razor" Line="4" Column="5" />
-      <File FileName="TranslateApp/Shared/NavMenu.razor" Line="1" Column="1" />
+      <File FileName="TranslateApp/Pages/Translate.razor" Line="19" Column="36" IsPinned="True" />
+      <File FileName="TranslateApp/Client/Program.cs" />
+      <File FileName="TranslateApp/Client/Translatesever.cs" Line="21" Column="32" />
+      <File FileName="SeleniumTest/SeleniumTest1.cs" Line="65" Column="2" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="TranslateApp" expanded="True">
-            <Node name="SeleniumTest" expanded="True">
-              <Node name="UnitTest1.cs" selected="True" />
-            </Node>
+            <Node name="SeleniumTest" expanded="True" />
             <Node name="TranslateApp" expanded="True">
               <Node name="Client" expanded="True" />
               <Node name="Pages" expanded="True" />
+              <Node name="Properties" expanded="True" />
               <Node name="Shared" expanded="True">
                 <Node name="MainLayout.razor" expanded="True" />
               </Node>
@@ -38,5 +33,9 @@
   </MonoDevelop.Ide.Workbench>
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.ItemProperties.TranslateApp PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/zoeyyang/Projects/TranslateApp/SeleniumTest/UnitTest1.cs" relfile="SeleniumTest/UnitTest1.cs" line="48" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
 </Properties>

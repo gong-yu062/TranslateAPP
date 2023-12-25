@@ -1,10 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Newtonsoft.Json;
 
-
 namespace TranslateApp
 {
-
     // This class represents the input model for the translation service. It contains the text to translate and the target language.
     public class TranslationInputModel
     {
@@ -49,7 +47,6 @@ namespace TranslateApp
 
     public class TranslationService
     {
-
         private readonly HttpClient httpClient;  // HttpClient used to send HTTP requests
         private readonly string apiKey = "e2d746bb27mshfd7a9553bd4b209p151d10jsn9a5efdad6524"; // API key for the translation service
         private readonly string apiUrl = "https://google-translate113.p.rapidapi.com/api/v1/translator/text";
@@ -73,12 +70,10 @@ namespace TranslateApp
                 {
                     { "text", text },
                     { "from", fromLanguage },
-                    { "to", toLanguage }
+                    { "to", toLanguage },
                 };
             var content = new FormUrlEncodedContent(requestBody);
-            // Send a POST request to the translation service API
             var response = await httpClient.PostAsync(apiUrl, content);
-            // If the request is successful, process the respons
             if (response.IsSuccessStatusCode)
             {
                 var jsonResponse = await response.Content.ReadAsStringAsync();
@@ -87,23 +82,22 @@ namespace TranslateApp
                 Console.WriteLine($"Deserialized translation result: {translationResult}");
                 if (translationResult != null)
                 {
-                  return translationResult.Trans;
+                    return translationResult.Trans;
                 }
                 else
                 {
                     return "Error in translation";
                 }
-                }
-                else
-                {
+            }
+            else
+            {
                 // If the request is not successful, log the status code and response body
-                    Console.WriteLine($"Status code: {response.StatusCode}");
-                    var responseBody = await response.Content.ReadAsStringAsync();
-                    Console.WriteLine($"Response body: {responseBody}");
-                }
-            // If the method hasn't returned by this point, return an error message
+                Console.WriteLine($"Status code: {response.StatusCode}");
+                var responseBody = await response.Content.ReadAsStringAsync();
+                Console.WriteLine($"Response body: {responseBody}");
+            }
+
             return "Error in request";
         }
-
     }
 }
